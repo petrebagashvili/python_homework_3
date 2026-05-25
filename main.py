@@ -144,7 +144,6 @@ import random
 
 choices = ["მარჯვენა", "მარცხენა"]
 
-correct_choice = random.choice(choices)
 
 attempts = 5
 correct_answers = 0
@@ -153,7 +152,7 @@ print("აირჩიე: 'მარჯვენა' ან 'მარცხე
 print("თამაშის გასათიშად დაწერე: exit")
 
 for i in range(attempts):
-
+    correct_choice = random.choice(choices)
     user = input(f"{i+1} მცდელობა: ")
 
     if user == "exit":
@@ -165,9 +164,9 @@ for i in range(attempts):
         correct_answers += 1
     else:
         print("არასწორია ")
+        break
 
+if correct_answers == 5:
+    print("გამარჯვება ")
 else:
-    if correct_answers == 5:
-        print("გამარჯვება ")
-    else:
-        print("შენ დამარცხდი ")
+    print("შენ დამარცხდი ")
